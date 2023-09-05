@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="">
+        <div className="navbar navbar-expand-lg bg-body-tertiary" style={{display:'flex', justifyContent:'space-between'}}>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <h1>
                     <Link to="/">Libreria Valle</Link>

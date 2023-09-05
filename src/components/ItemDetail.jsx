@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
 
 const ItemDetail = ({item}) =>{
-    if(!item) return null;
+    if(isLoading){
+        return <h2>Loading...</h2>
+    }
+    if(!item){
+        return null
+    };
 
     return(
     <div>
@@ -15,5 +20,6 @@ const ItemDetail = ({item}) =>{
 
 ItemDetail.PropTypes={
     item: PropTypes.object.isRequired,
+    isLoading: PropTypes.bool,
 };
 export default ItemDetail;

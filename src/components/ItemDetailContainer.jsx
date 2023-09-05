@@ -7,6 +7,7 @@ import ItemDetail from "./ItemDetail";
 const ItemDetailContainer = ()=>{
 
     const [item,setItem] = useState(null);
+    const [isLoading, setIsLoading] = useEffect(true);
     const {id} =useParams();
 
 
@@ -17,9 +18,12 @@ const ItemDetailContainer = ()=>{
         .catch((error)=> {
             console.error(error);
             setItem(null);
-        });
+        })
+        .finally(()=>{
+            setIsLoading(false);
+        } )
     },[id]);
 
-    return <ItemDetail item={item} />;
+    return <ItemDetail item={item} isLoading={isLoading} />;
 };
 export default ItemDetailContainer;
